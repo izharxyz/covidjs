@@ -42,10 +42,10 @@ export function useFetchDiseaseData(initialCountry: string) {
             setError(null);
             try {
                 const response = await fetch(
-                    `https://disease.sh/v3/covid-19/historical/${countryToFetch}?lastdays=1500`
+                    `https://disease.sh/v3/covid-19/historical/${countryToFetch}?lastdays=2500`
                 );
                 if (!response.ok) {
-                    throw new Error(
+                    setError(
                         `Failed to fetch data for ${countryToFetch}: ${response.statusText}`
                     );
                 }

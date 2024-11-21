@@ -78,8 +78,11 @@ export type Countries = Country[];
 
 
 export type DiseaseData = {
-    cases: { [key: string]: number };
-    deaths: { [key: string]: number };
-    recovered: { [key: string]: number };
+    province: string[];
+    timeline:{
+        cases: { [key: string]: number };
+        deaths: { [key: string]: number };
+        recovered: { [key: string]: number };
+    }
     [key: string]: any;
 };
