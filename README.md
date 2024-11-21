@@ -1,46 +1,94 @@
-# Getting Started with Create React App
+# COVIDJS - COVID-19 Timeline Data Viewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A one-page web application that allows users to view and filter COVID-19 timeline data by selecting a custom date range. This app provides cumulative data for cases, deaths, and recoveries, and converts them into daily values (by calculating the difference between consecutive days). Users can easily explore the data in an interactive and intuitive way.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+-   **Interactive Date Picker**: Allows users to select a custom date range to filter the data.
+-   **Cumulative Data Transformation**: The app takes cumulative data and calculates daily values by subtracting the previous day's values.
+-   **Chronological Sorting**: Data entries are sorted chronologically to ensure accurate daily calculations.
+-   **Responsive Design**: The app is fully responsive, making it accessible across devices (desktop, tablet, mobile).
+-   **Data Visualization**: Displays COVID-19 data for cases, deaths, and recoveries.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-   **Frontend**:
+    -   React.js
+    -   TypeScript
+    -   Tailwind CSS
+    -   React DatePicker
+-   **Backend**:
+    -   Not used in this project (this is a frontend-only app)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+Follow these steps to run the app locally:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+-   Node.js (v18.x or higher)
+-   npm (v8.x or higher) or yarn (v1.x or higher)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Steps to Run Locally
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the Repository**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    First, clone the repository to your local machine:
 
-### `npm run eject`
+    ```bash
+    git clone https://github.com/izharxyz/covidjs.git
+    cd covidjs
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. **Install Dependencies**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Next, install the necessary dependencies using npm or yarn:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. **Run the App**
 
-## Learn More
+    Finally, run the app using npm or yarn:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```bash
+     npm start
+     # or
+     yarn start
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    The app should now be running on [http://localhost:3000](http://localhost:3000).
+
+### Features Walkthrough
+
+#### Date Range Filter
+
+The app allows users to select a date range using a date picker. Upon selecting the "from" and "to" dates, the app filters the COVID-19 data within that range. The selected date range is displayed above the date picker for clarity.
+
+-   Start Date: The "from" date in the date range.
+-   End Date: The "to" date in the date range.
+
+#### Responsive Design
+
+The app is fully responsive and optimized for all screen sizes:
+
+-   On larger screens (desktops), the layout uses a horizontal format.
+-   On smaller screens (mobiles and tablets), the layout adjusts to ensure usability.
+
+### Code Structure
+
+Here's a brief overview of the main files and directories in the project:
+
+-   src/: Contains the main application code.
+
+    -   components/: Contains reusable React components like DateRangePicker.
+    -   App.tsx: The main entry point for the app.
+    -   index.tsx: The root of the React application where ReactDOM renders the app.
+    -   types.ts: Contains TypeScript types for the data used in the app (e.g., DiseaseData).
+    -   hooks.ts: Contains custom React hooks to fetch data in the app.
+
+-   public/: Static assets like images and the HTML template.
+    -   index.html: The HTML template where the app is rendered.
