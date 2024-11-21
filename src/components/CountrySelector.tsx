@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useFetchCountries } from "../hooks";
+import { CiSearch } from "react-icons/ci";
 import type { Country } from "../types";
 
 type CountrySelectorProps = {
@@ -27,7 +28,11 @@ export default function CountrySelector({ onSelect }: CountrySelectorProps) {
     return (
         <div className="w-full">
             <div className="relative">
+                <label htmlFor="search">
+                    <CiSearch className="absolute top-1/2 left-6 transform -translate-y-1/2 text-gray-500" />
+                </label>
                 <input
+                    name="search"
                     type="text"
                     placeholder="Search for a country..."
                     value={search}
@@ -36,10 +41,10 @@ export default function CountrySelector({ onSelect }: CountrySelectorProps) {
                     onBlur={() => {
                         setTimeout(() => setIsFocused(false), 200);
                     }}
-                    className="w-full rounded-full px-8 py-3 focus:outline-none shadow-xl"
+                    className="w-full rounded-full pl-12 px-8 py-3 focus:outline-none shadow-sm"
                 />
                 {isFocused && (
-                    <div className="absolute z-10 bg-white mt-1 w-full max-h-60 overflow-auto rounded-lg shadow-xl">
+                    <div className="absolute z-10 bg-white mt-1 w-full max-h-60 overflow-auto rounded-lg shadow-sm">
                         {loading ? (
                             <div className="p-4 text-center text-gray-500">
                                 Loading...
