@@ -14,7 +14,6 @@ const PopulationChart: React.FC<PopulationChartProps> = ({ filteredData }) => {
         return <p>No data available. Please select a valid date range.</p>;
     }
 
-    // Aggregate totals for cases, deaths, and recovered
     const totalCases = Object.values(filteredData.cases).reduce(
         (acc, curr) => acc + curr,
         0
@@ -53,12 +52,12 @@ const PopulationChart: React.FC<PopulationChartProps> = ({ filteredData }) => {
                 },
             },
             tooltip: {
-                enabled: true, // Enable tooltips
+                enabled: true,
                 callbacks: {
                     label: function (tooltipItem: any) {
                         const value = tooltipItem.raw;
                         const label = tooltipItem.label;
-                        return `${label}: ${value.toLocaleString()}`; // Add commas for readability
+                        return `${label}: ${value.toLocaleString()}`;
                     },
                 },
             },

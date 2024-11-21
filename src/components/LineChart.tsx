@@ -29,7 +29,6 @@ const TimelineChart: React.FC<TimelineChartProps> = ({ filteredData }) => {
         return <p>No data available. Please select a valid date range.</p>;
     }
 
-    // Prepare the data for Chart.js
     const labels = Object.keys(filteredData.cases);
 
     const casesData = Object.values(filteredData.cases).map(
@@ -73,7 +72,7 @@ const TimelineChart: React.FC<TimelineChartProps> = ({ filteredData }) => {
         responsive: true,
         plugins: {
             legend: {
-                display: false, // Remove legend
+                display: false,
             },
             title: {
                 display: true,
@@ -87,13 +86,13 @@ const TimelineChart: React.FC<TimelineChartProps> = ({ filteredData }) => {
                     text: "Date",
                 },
                 ticks: {
-                    color: "#333", // Darker color for X-axis ticks
+                    color: "#333",
                 },
                 grid: {
-                    display: false, // Remove gridlines for X-axis
+                    display: false,
                 },
                 border: {
-                    color: "#333", // Darker and thicker X-axis
+                    color: "#333",
                     width: 1,
                 },
             },
@@ -103,13 +102,13 @@ const TimelineChart: React.FC<TimelineChartProps> = ({ filteredData }) => {
                     text: "Cases (in millions)",
                 },
                 ticks: {
-                    color: "#333", // Darker color for Y-axis ticks
+                    color: "#333",
                 },
                 grid: {
-                    display: false, // Remove gridlines for Y-axis
+                    display: false,
                 },
                 border: {
-                    color: "#333", // Darker and thicker Y-axis
+                    color: "#333",
                     width: 1,
                 },
             },
